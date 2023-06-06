@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<%var q=0%>
+ <%list.forEach(speciality=>{%>
+  <%q++%>
+<%if(q==1){%>
+<head>
+
+</head>
+<body>
+    Doctor Added successfully!!!!!
+    <form action="hosppage" method="post">
+        <button type="submit" class="btn btn-danger btn-sm" value="<%= speciality.hid %>" name="value">Home Page</button>
+    </form> 
+    <form action="newentry" method="post">
+        <button type="submit" class="btn btn-danger btn-sm" value="<%= speciality.hid %>" name="value">Add Doctor Again</button>
+    </form>
+    <%}%>
+        <%})%>                
+</body>
+</html>

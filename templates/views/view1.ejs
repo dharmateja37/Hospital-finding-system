@@ -1,0 +1,46 @@
+<html lang="en">
+    <style>
+        #watermark{
+            transform: rotate(45deg);
+            overflow: hidden;
+            font-size: 30px;
+        }
+    </style>
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DemoPdf</title>
+</head>
+<body>
+    
+    <% var a=0%>
+    <% var b=20%>
+    <% var c=20%>
+    <% while(a<18) {%>
+        <% a=a+1 %>
+    <div id='watermark' style="position: relative;top: <%=b%>px;left: <%=c%>px;opacity: 0.25;"><%= hospital%></div>
+    <% b=b+60 %>
+    <% c=c+50 %>
+    <% }%>
+    <div style="position:absolute;top: 10px;left: 10px;border: 10px solid teal;height: 1640px;width: 1150px;"></div>
+    <div style="position: absolute;top: 40px;left: 40px;">
+        
+     <h1 style="margin:0px 15px 0px 15px;align-self:center;font-family:Times New Roman;font: weight 1px;font-size: 85px;text-align: center;"><%= data%></h1>
+     <br/><br/><br/><br/>
+     <h1 style="font-size: 60px;color: red;text-align: center;"><%= hospital%></h1><br/>
+     <h3 style="font-size: 40px;"><%= date%></h3><br/>
+     <h3 style="font-size: 40px;"><%= fname%></h3><br/>
+     <h3 style="font-size: 40px;"><%= email%></h3><br/>
+     <h3 style="font-size: 40px;"><%= age%></h3><br/>
+     <h3 style="font-size: 40px;"><%= dname%></h3><br/>
+     <h3 style="font-size: 40px;"><%= problem%></h3><br/>
+     <h3 style="font-size: 40px;"><%= timeslot%></h3><br/>
+     <h3 style="font-size: 40px;"><%= fee%></h3><br/>
+    
+        
+
+    </div>
+
+</body>
+</html>

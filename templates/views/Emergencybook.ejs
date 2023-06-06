@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang=" en">
+  <%- include('../partials/watermark.ejs')%>
+  
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<style>
+  .form-row {
+    width: 700px;
+  }
+</style>
+
+
+<body>
+  <form action="/Emergency" method="post" onsubmit = "return(validateFields(document.getElementById('phone')));">
+  <div class="form-row">
+    <div class="col-7 my-2 mx-2 ">
+      <input type="text" class="form-control" placeholder="Patient Name" name="name"/>
+    </div>
+    <div class="col-7 my-2 mx-2 ">
+      <select class="form-control" name="address">
+        <option>Select near address</option>
+        <option>Kumarswamy Layout</option>
+        <option>kanakapura</option>
+        <option>Basavanagudi</option>
+        <option>Jayanagar 4th block</option>
+        <option>Basaveshwar Nagar</option>
+        <option>Lalbagh</option>
+        <option>Vasanth Nagar</option>
+        <option>Kalyan Nagar</option>
+        <option>Indiranagar</option>
+        <option>Yeswanthpur</option>
+        <option>Bilekahalli</option>
+        <option>Sunkalpalya</option>
+        <option>Rajajinagar</option>
+        <option>BTM Layout</option>
+        <option>Gandhi Nagar</option>
+      </select>
+    </div>
+
+  </div>
+  <div class="col-7 my-2 mx-2 ">
+    <input type="text" class="form-control" placeholder="Near Address or Hospital name" name="paddress"/>
+  </div>
+  <div class="col-7 my-2 mx-2 ">
+    <input type="text" class="form-control" placeholder="phone number" name="Phone" id="phone"/>
+  </div>
+
+    <div class="col my-2 mx-2">
+      <button type="submit" class="btn btn-primary btn" id="date" name="value">Submit</button>
+    </div>
+  </div>
+</form>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+<script>
+
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0 so need to add 1 to make it 1!
+var yyyy = today.getFullYear();
+if(dd<10){
+  dd='0'+dd
+} 
+if(mm<10){
+  mm='0'+mm
+} 
+var date  = dd+'-'+mm+'-'+yyyy;
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+var dateTime = date+' '+time;
+document.getElementById("date").setAttribute("value", dateTime );
+function validateFields(elem1)
+{
+var phone=/^\d{10}$/;
+if(!elem1.value.match(phone))
+{
+alert("Invalid Phone Number");
+return false;
+}
+if(elem1.value.match(phone))
+{
+return true;
+}
+}
+    
+</script>
+
+</html>

@@ -1,0 +1,91 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<html>
+<style>
+  .container {
+    margin-top: 5vh;
+  }
+
+  .w-100 {
+    height: 40vh;
+  }
+</style>
+<%- include('../partials/navbar.ejs')%>
+  <div class="bd-example">
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="https://media.istockphoto.com/photos/the-concept-of-charity-love-donate-and-helping-hand-international-picture-id1220974375?k=20&m=1220974375&s=612x612&w=0&h=HiIvh-fdsZ1NY1d9p1VCba18mDNeg6Vue7Kfeepe9ec="
+            class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h4>Welcome..!</h4>
+            <p>To book an appointment, please fill in the information below and submit.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  <div class="container">
+    <form action="/Appointment" method="POST">
+    <div class="row my-3  mx-5">
+      <div class="col ">
+
+        <input type="text" class="form-control" id="validationDefault01" placeholder="<%=appo.Firstname %>" name="Firstname" required>
+      </div>
+      <div class="col ">
+        <input type="text" class="form-control" id="validationDefault02" placeholder="<%=appo.Lastname %>" name="Lastname" required>
+      </div>
+    </div>
+    <div class="row my-3 mx-5">
+      <div class="col  ">
+
+        <input type="email" class="form-control" id="inputEmail3" placeholder="<%=appo.Email %>" name="Email">
+      </div>
+      <div class="col ">
+        <input type="text" class="form-control" placeholder="<%=appo.Phone %>" name="Phone">
+
+      </div>
+    </div>
+    <div class="row my-3 mx-5">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="<%=appo.problem %>" name="problem">
+      </div>
+      <div class="col ">
+        <input class="form-control" type="date" name="<%=appo.date %>" placeholder="Select a Date*">
+      </div>
+    </div>
+    <div class="row my-3 mx-5">
+      <div class="col">
+        <select class="form-control" name="timeslot">
+          <option>Select Time slot</option>
+          <option>10:00AM to 12:00PM</option>
+          <option>12:00PM to 01:00PM</option>
+          <option>02:00PM to 04:00PM</option>
+          <option>04:30PM to 07:00PM</option>
+        </select>
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="<%=appo.age %>" name="age">
+      </div>
+    </div>
+    <div class="row my-3 mx-5">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="<%=appo.hname %>" name="hname">
+        </div>
+        <div class="col ">
+          <input class="form-control" type="text" name="dname" placeholder="<%=appo.dname %>">
+        </div>
+    </div>
+    <div class="row my-3 mx-5">
+      <div class="col">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+    
+</form>
+  </div>
+</html>
